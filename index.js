@@ -5,26 +5,29 @@ const bodyParser = require("body-parser");
 app.set('view engine','ejs');
 app.use(express.static('public'));
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 
 
-app.get("/",(req,res) => {
+app.get("/",function(req,res){
     res.render("index")
 });
 
 
-app.get("/perguntar",(req,res) => {
+app.get("/perguntar",function(req, res){
     res.render("perguntar")
 });
 
+app.post("/salvarpergunta",function(req,res){
+    var titulo = req.body.titulo;
+    var descricao = req.body.descricao;
+    res.send("Formulario recebido! Titulo: " + titulo + " Pergunta: " + descricao)
+  })
 
-app.post("/salvarpergunta",(req,res) => {
-    res.send("Formulário recebido!");
-});
 
+  
 
-app.listen(8080,(
+app.listen(2525,(
     console.log("rodando")
 ));
