@@ -1,7 +1,28 @@
 body{
     background-color: rgb(240, 157, 240);
+    margin: 0;
+    overflow: hidden;
 }
 
 #formulario-pergunta{
     margin-top: 5vh;
 }
+
+  .aguaviva {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 150px;
+    z-index: 10;
+    animation: flutuar 2.5s ease-in-out infinite;
+  }
+  
+  @keyframes flutuar {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
